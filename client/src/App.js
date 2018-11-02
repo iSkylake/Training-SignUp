@@ -37,6 +37,9 @@ class App extends Component {
 	render() {
 		return (
 			<div className="App">
+				<nav className="header">
+					<h1 className="app-name">Training</h1>
+				</nav>
 				{this.showView()}
 			</div>
 		);

@@ -1,6 +1,10 @@
-html, body {
+* {
   margin: 0;
   padding: 0;
+}
+
+html, body {
+	height: 100%;
 }
 
 body {
@@ -14,4 +18,8 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+#root {
+	height: 100%;
 }
