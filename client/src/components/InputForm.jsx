@@ -15,11 +15,11 @@ const InputForm = props => {
 
 	return (
 		<form className="input-form">
-			<h1>General Information</h1>
+			<h1 className="view-header">Sign Up</h1>
 			<input onChange={handleInputChange} name="login" type="text" placeholder="Login"/>
 			<input onChange={handleInputChange} name="firstName" type="text" placeholder="First Name"/>
 			<input onChange={handleInputChange} name="lastName" type="text" placeholder="Last Name"/>
-			<button onClick={handleContinue}>Continue</button>
+			<button onClick={handleContinue}>Next</button>
 		</form>
 	);
 }

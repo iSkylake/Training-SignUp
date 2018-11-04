@@ -13,7 +13,7 @@
 .header {
 	padding: 20px;
 	display: flex;
-	background-color: #00a5af;
+	background-color: #5468ff;
 	margin-bottom: 20px;
 	box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.15), 0 2px 9px 0 rgba(0, 0, 0, 0.1);
 }
@@ -28,6 +28,18 @@
 
 /* INPUT FORM */
 
+.view-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 98%;
+	background-color: #fff;
+	margin: 0 auto;
+	padding: 50px 5%;
+	box-sizing: border-box;
+	box-shadow: 4px 3px 6px rgba(0, 0, 0, 0.15);
+}
+
 .input-form {
 	display: flex;
 	flex-direction: column;
@@ -40,7 +52,7 @@
 	box-shadow: 4px 3px 6px rgba(0, 0, 0, 0.15);
 }
 
-.input-form h1 {
+.view-header {
 	font-size: 2.5rem;
 	font-weight: 600;
 	color: #6c717a;
@@ -48,7 +60,7 @@
 }
 
 .input-form input, .input-form button {
-	width: 100%;
+	width: 90%;
 }
 
 .input-form input {
@@ -56,12 +68,115 @@
 	margin-bottom: 30px;
 	padding: 10px 15px;
 	box-sizing: border-box;
+	border: #eee solid 2px;
 }
 
 .input-form button {
 	font-size: 2rem;
-	background-color: #00c5d1;
+	background-color: #5468ff;
 	color: #fff;
 	padding: 10px;
 	border: none;
+}
+
+/* TASKS */
+
+.task-container {
+
+}
+
+.task-wrapper {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	margin-bottom: 30px;
+}
+
+.task {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 20%;
+	border: solid 2px #f0f2f5;
+	padding: 20px 10px;
+}
+
+.task-selected {
+	border: solid 2px #5468ff;
+}
+
+.task-icon-wrapper {
+	box-sizing: border-box;
+	width: 100px;
+	height: 100px;
+	background-color: #ededed;
+	border-radius: 50%;
+	position: relative;
+	margin-bottom: 20px;
+}
+
+.task-icon {
+	position: absolute;
+	font-size: 2.3rem;
+	color: #8e8e8e;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+
+.task-name {
+	margin-bottom: 20px;
+}
+
+.task-description {
+	color: #adadad;
+	margin-bottom: 20px;
+}
+
+.task-check-button {
+	padding: 8px;
+	font-size: 1.2rem;
+	color: #fff;
+	background-color: #5468ff;
+	border: solid 1px #5468ff;
+}
+
+.task-check {
+	font-size: 1.8rem;
+	border: solid 2px #5468ff;
+	padding: 6px;
+	border-radius: 50%;
+	color: #fff;
+}
+
+.task-check-selected {
+	background-color: #5468ff;
+}
+
+.task-button-wrapper {
+
+}
+
+.task-button-wrapper button {
+	padding: 13px;
+	font-size: 1.2rem;
+	margin: 5px;
+	border: solid 2px #5468ff;
+}
+
+.button-back {
+	background-color: #fff;
+	color: #5468ff;
+}
+
+.button-next {
+	color: #fff;
+	background-color: #5468ff;
+}
+
+/* SCHEDULE */
+
+.schedule-container {
+	
 }
