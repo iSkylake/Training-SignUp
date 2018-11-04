@@ -67,22 +67,22 @@ const scheduleList = [
 const shiftList = [
 	{
 		id: '67425',
-		shift: 'Morning',
+		name: 'Morning',
 		time: '04:00 - 08:00'
 	},
 	{
 		id: '85257',
-		shift: 'Day',
+		name: 'Day',
 		time: '09:30 - 13:30'
 	},
 	{
 		id: '34212',
-		shift: 'Twi',
+		name: 'Twi',
 		time: '15:00 - 19:00'
 	},
 	{
 		id: '55455',
-		shift: 'Nite',
+		name: 'Nite',
 		time: '20:30 - 00:30'
 	}
 ]

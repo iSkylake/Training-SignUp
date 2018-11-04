@@ -14,9 +14,9 @@ library.add(fas);
 
 class App extends Component {
 	state = {
-		showInputForm: true,
+		showInputForm: false,
 		showTask: false,
-		showSchedule: false,
+		showSchedule: true,
 		showConfirmation: false,
 		firstName: '',
 		lastName: '',
@@ -24,7 +24,51 @@ class App extends Component {
 		pit: false,
 		tdr: false,
 		problemSolve: false,
-		waterSpider: false
+		waterSpider: false,
+		schedule: {
+			Sunday: {
+				morning: false,
+				day: false,
+				twi: false,
+				nite: false
+			},
+			Monday: {
+				morning: false,
+				day: false,
+				twi: false,
+				nite: false
+			},
+			Tuesday: {
+				morning: false,
+				day: false,
+				twi: false,
+				nite: false
+			},
+			Wednesday: {
+				morning: false,
+				day: false,
+				twi: false,
+				nite: false
+			},
+			Thursday: {
+				morning: false,
+				day: false,
+				twi: false,
+				nite: false
+			},
+			Friday: {
+				morning: false,
+				day: false,
+				twi: false,
+				nite: false
+			},
+			Saturday: {
+				morning: false,
+				day: false,
+				twi: false,
+				nite: false
+			}
+		}
 	}
 
 	handleInput = (eTargetName, eTargetValue) => {
@@ -36,6 +80,13 @@ class App extends Component {
 		this.setState({[taskName]: taskBool});
 	}
 
+	handleSchedule = (shift, day) => {
+		shift = shift.toLowerCase();
+		let schedule = {...this.state.schedule}
+		schedule[day][shift] = !this.state.schedule[day][shift];
+		this.setState({schedule});
+	}
+
 	handleView = (currentView, nextView) => {
 		this.setState({
 			[currentView]: false,
@@ -44,12 +95,12 @@ class App extends Component {
 	}
 
 	showView = () => {
-		const {showInputForm, showTask, showSchedule} = this.state;
+		const {showInputForm, showTask, showSchedule, schedule} = this.state;
 		const {pit, tdr, problemSolve, waterSpider} = this.state;
 		const taskProps = {pit, tdr, problemSolve, waterSpider}
 		if(showInputForm) return <InputForm onHandleInput={this.handleInput} onHandleView={this.handleView} />;
 		if(showTask) return <Tasks tasks={taskProps} onHandleBack={this.handleView} onHandleNext={this.handleView} onHandleTask={this.handleTask}/>;
-		if(showSchedule) return <Schedule onHandleBack={this.handleView} onHandleNext={this.handleView}/>
+		if(showSchedule) return <Schedule schedules={schedule} onHandleBack={this.handleView} onHandleNext={this.handleView} onHandleSchedule={this.handleSchedule}/>
 	}
 
 	render() {

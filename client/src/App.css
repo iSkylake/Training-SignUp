@@ -178,5 +178,38 @@
 /* SCHEDULE */
 
 .schedule-container {
-	
+
+}
+
+.schedule-wrapper { /* Same as task wrapper */
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	margin-bottom: 30px;
+}
+
+.schedule-name {
+	border-bottom: solid 1px #000;
+	padding-bottom: 5px;
+}
+
+.shift {
+	border: solid 2px #5468ff;
+	margin-bottom: 10px;
+	padding: 7px;
+	border-radius: 10px;
+	color: #5468ff;
+	font-size: 1rem;
+	text-transform: uppercase;
+	font-weight: 500;
+}
+
+.shift-name {
+	font-size: 0.8rem;
+}
+
+.shift-selected {
+	background-color: #5468ff;
+	color: #fff;
 }
