@@ -44,7 +44,8 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	width: 98%;
+	/*width: 98%;*/
+	width: 80%;
 	background-color: #fff;
 	margin: 0 auto;
 	padding: 50px 5%;
@@ -59,16 +60,23 @@
 	margin-bottom: 40px;
 }
 
-.input-form input, .input-form button {
+.input-form button {
 	width: 90%;
 }
 
 .input-form input {
 	font-size: 2rem;
-	margin-bottom: 30px;
+	width: 85%;
+	border: none;
+	border-bottom: #ccc solid 2px;
+	outline: none;
 	padding: 10px 15px;
+	margin-bottom: 30px;
 	box-sizing: border-box;
-	border: #eee solid 2px;
+}
+
+.input-form input:focus {
+	border-color: #000;
 }
 
 .input-form button {
@@ -101,6 +109,15 @@
 	border: solid 2px #f0f2f5;
 	padding: 20px 10px;
 }
+
+.task:hover {
+	border-color: #5468ff;
+}
+
+.task, .task-check {
+	transition: all 0.3s;
+}
+
 
 .task-selected {
 	border: solid 2px #5468ff;
@@ -203,6 +220,7 @@
 	font-size: 1rem;
 	text-transform: uppercase;
 	font-weight: 500;
+	transition: all 0.3s;
 }
 
 .shift-name {

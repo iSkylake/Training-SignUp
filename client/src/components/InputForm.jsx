@@ -16,9 +16,9 @@ const InputForm = props => {
 	return (
 		<form className="input-form">
 			<h1 className="view-header">Sign Up</h1>
-			<input onChange={handleInputChange} name="login" type="text" placeholder="Login"/>
-			<input onChange={handleInputChange} name="firstName" type="text" placeholder="First Name"/>
-			<input onChange={handleInputChange} name="lastName" type="text" placeholder="Last Name"/>
+			<input onChange={handleInputChange} value={props.info.login} name="login" type="text" placeholder="Login"/>
+			<input onChange={handleInputChange} value={props.info.firstName} name="firstName" type="text" placeholder="First Name"/>
+			<input onChange={handleInputChange} value={props.info.lastName} name="lastName" type="text" placeholder="Last Name"/>
 			<button onClick={handleContinue}>Next</button>
 		</form>
 	);

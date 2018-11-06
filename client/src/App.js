@@ -14,9 +14,9 @@ library.add(fas);
 
 class App extends Component {
 	state = {
-		showInputForm: false,
+		showInputForm: true,
 		showTask: false,
-		showSchedule: true,
+		showSchedule: false,
 		showConfirmation: false,
 		firstName: '',
 		lastName: '',
@@ -95,10 +95,11 @@ class App extends Component {
 	}
 
 	showView = () => {
-		const {showInputForm, showTask, showSchedule, schedule} = this.state;
+		const {showInputForm, showTask, showSchedule, schedule, firstName, lastName, login} = this.state;
 		const {pit, tdr, problemSolve, waterSpider} = this.state;
 		const taskProps = {pit, tdr, problemSolve, waterSpider}
-		if(showInputForm) return <InputForm onHandleInput={this.handleInput} onHandleView={this.handleView} />;
+		const info = {firstName, lastName, login};
+		if(showInputForm) return <InputForm info={info} onHandleInput={this.handleInput} onHandleView={this.handleView} />;
 		if(showTask) return <Tasks tasks={taskProps} onHandleBack={this.handleView} onHandleNext={this.handleView} onHandleTask={this.handleTask}/>;
 		if(showSchedule) return <Schedule schedules={schedule} onHandleBack={this.handleView} onHandleNext={this.handleView} onHandleSchedule={this.handleSchedule}/>
 	}
@@ -107,7 +108,7 @@ class App extends Component {
 		return (
 			<div className="App">
 				<nav className="header">
-					<h1 className="app-name">Training</h1>
+					<h1 className="app-name">Learning</h1>
 				</nav>
 				{this.showView()}
 			</div>
