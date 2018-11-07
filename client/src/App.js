@@ -14,17 +14,13 @@ library.add(fas);
 
 class App extends Component {
 	state = {
-		showInputForm: true,
-		showTask: false,
+		showInputForm: false,
+		showTask: true,
 		showSchedule: false,
 		showConfirmation: false,
 		firstName: '',
 		lastName: '',
 		login: '',
-		pit: false,
-		tdr: false,
-		problemSolve: false,
-		waterSpider: false,
 		schedule: {
 			Sunday: {
 				morning: false,

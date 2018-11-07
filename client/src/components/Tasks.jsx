@@ -1,35 +1,30 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import {taskList} from '../fakeDB.js';
+import Task from './Task.jsx';
 
 const Tasks = props => {
 
-	const handleBack = () => {
-		props.onHandleBack('showTask', 'showInputForm');
+	const handleBack = (currentView, nextView) => {
+		props.onHandleBack(currentView, nextView);
 	}
 
-	const handleNext = () => {
-		props.onHandleNext('showTask', 'showSchedule');
+	const handleNext = (currentView, nextView) => {
+		props.onHandleNext(currentView, nextView);
 	}
 
-	const handleClick = (taskName) => {
-		props.onHandleTask(taskName);
+	const handleTask = () => {
+		props.onHandleTask();
 	}
 
-	const tasks = taskList.map((task) => {
-			return(
-				<div key={task.id} className={props.tasks[task.value] ? "task task-selected" : "task"} onClick={() => handleClick(task.value)}>
-					<div className="task-icon-wrapper">
-						<FontAwesomeIcon className="task-icon" icon={task.icon} />
-					</div>
-					<h2 className="task-name">{task.name}</h2>
-					<p className="task-description">{task.description}</p>
-					<FontAwesomeIcon className={props.tasks[task.value] ? "task-check task-check-selected" : "task-check"} icon="check"/>
-				</div>
-			)
-		}
-	)
+	const tasks = taskList.map((task) => 
+		<Task key={task.id} 
+			task={task} 
+			onHandleTask={handleTask} 
+			onHandleNext={handleNext} 
+			onHandleBack={handleBack}
+		/>
+	);
 
 	return (
 		<div className="task-container view-container">
