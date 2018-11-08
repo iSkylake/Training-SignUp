@@ -18,9 +18,10 @@ class App extends Component {
 		showTask: true,
 		showSchedule: false,
 		showConfirmation: false,
+		login: '',
 		firstName: '',
 		lastName: '',
-		login: '',
+		tasks: {},
 		schedule: {
 			Sunday: {
 				morning: false,
@@ -71,14 +72,15 @@ class App extends Component {
 		this.setState({[eTargetName]: [eTargetValue]});
 	}
 
-	handleTask = (taskName) => {
-		const taskBool = !this.state[taskName];
-		this.setState({[taskName]: taskBool});
+	handleTask = (taskID, taskName) => {
+		const tasks = this.state.tasks;
+		tasks[taskName] ? (tasks[taskName] = null) : tasks[taskName] = taskID;
+		this.setState({tasks});
 	}
 
 	handleSchedule = (shift, day) => {
 		shift = shift.toLowerCase();
-		let schedule = {...this.state.schedule}
+		let schedule = this.state.schedule;
 		schedule[day][shift] = !this.state.schedule[day][shift];
 		this.setState({schedule});
 	}
@@ -92,12 +94,10 @@ class App extends Component {
 
 	showView = () => {
 		const {showInputForm, showTask, showSchedule, schedule, firstName, lastName, login} = this.state;
-		const {pit, tdr, problemSolve, waterSpider} = this.state;
-		const taskProps = {pit, tdr, problemSolve, waterSpider}
 		const info = {firstName, lastName, login};
 		if(showInputForm) return <InputForm info={info} onHandleInput={this.handleInput} onHandleView={this.handleView} />;
-		if(showTask) return <Tasks tasks={taskProps} onHandleBack={this.handleView} onHandleNext={this.handleView} onHandleTask={this.handleTask}/>;
-		if(showSchedule) return <Schedule schedules={schedule} onHandleBack={this.handleView} onHandleNext={this.handleView} onHandleSchedule={this.handleSchedule}/>
+		else if(showTask) return <Tasks onHandleBack={this.handleView} onHandleNext={this.handleView} onHandleTask={this.handleTask}/>;
+		else if(showSchedule) return <Schedule schedules={schedule} onHandleBack={this.handleView} onHandleNext={this.handleView} onHandleSchedule={this.handleSchedule}/>
 	}
 
 	render() {

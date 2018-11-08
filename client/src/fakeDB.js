@@ -3,33 +3,25 @@ const taskList = [
 		id: '56337',
 		name: 'PIT',
 		icon: 'truck-loading',
-		description: 'Operate forklift (RC) to unload trailers and downstack pallets',
-		check: false,
-		value: 'pit'
+		description: 'Operate forklift (RC) to unload trailers and downstack pallets'
 	},
 	{
 		id: '29532',
 		name: 'TDR',
 		icon: 'dungeon',
-		description: 'Verify and maintain trailer safety before and after opening a dock',
-		check: false,
-		value: 'tdr'
+		description: 'Verify and maintain trailer safety before and after opening a dock'
 	},
 	{
 		id: '45601',
 		name: 'Problem Solve',
 		icon: 'box-open',
-		description: 'Fix damaged packages and verify if the item is in the correct pacakge.',
-		check: false,
-		value: 'problemSolve'
+		description: 'Fix damaged packages and verify if the item is in the correct pacakge.'
 	},
 	{
 		id: '95821',
 		name: 'Waterspider',
 		icon: 'spider',
-		description: 'Wrap ready-to-go pallets and stage them to the outbound area.',
-		check: false,
-		value: 'waterSpider'
+		description: 'Wrap ready-to-go pallets and stage them to the outbound area.'
 	}
 ];
 

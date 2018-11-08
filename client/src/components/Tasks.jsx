@@ -5,22 +5,18 @@ import Task from './Task.jsx';
 
 const Tasks = props => {
 
-	const handleBack = (currentView, nextView) => {
-		props.onHandleBack(currentView, nextView);
+	const handleBack = () => {
+		props.onHandleBack('showTask', 'showInputForm');
 	}
 
-	const handleNext = (currentView, nextView) => {
-		props.onHandleNext(currentView, nextView);
-	}
-
-	const handleTask = () => {
-		props.onHandleTask();
+	const handleNext = () => {
+		props.onHandleNext('showTask', 'showSchedule');
 	}
 
 	const tasks = taskList.map((task) => 
 		<Task key={task.id} 
 			task={task} 
-			onHandleTask={handleTask} 
+			onHandleTask={(taskID, taskName) => props.onHandleTask(taskID, taskName)} 
 			onHandleNext={handleNext} 
 			onHandleBack={handleBack}
 		/>
@@ -30,7 +26,7 @@ const Tasks = props => {
 		<div className="task-container view-container">
 			<h1 className="view-header">SELECT TASKS</h1>
 			<div className="task-wrapper">
-			{tasks}
+				{tasks}
 			</div>
 			<div className="task-button-wrapper">
 				<button className="button-back" onClick={handleBack}>Back</button>

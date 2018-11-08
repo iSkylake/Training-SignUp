@@ -7,17 +7,17 @@ class Task extends Component{
 		select: false
 	}
 
-	handleClick = () => {
+	handleClick = (taskID, taskName) => {
 		const select = !this.state.select
 		this.setState({select});
-		this.props.onHandleTask();
+		this.props.onHandleTask(taskID, taskName);
 	}
 
 	render(){
 		const {task} = this.props;
 
 		return(
-			<div className={`task ${this.state.select ? "task-selected" : ""}`} onClick={() => this.handleClick(task.value)}>
+			<div className={`task ${this.state.select ? "task-selected" : ""}`} onClick={() => this.handleClick(task.id, task.name)}>
 				<div className="task-icon-wrapper">
 					<FontAwesomeIcon className="task-icon" icon={task.icon} />
 				</div>
