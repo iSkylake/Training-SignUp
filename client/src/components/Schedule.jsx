@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {scheduleList, shiftList} from '../fakeDB.js';
+import {scheduleList, shiftList} from '../appData.js';
 
 const Schedule = props => {
 
