@@ -15,6 +15,7 @@ const Tasks = props => {
 
 	const tasks = taskList.map((task) => 
 		<Task key={task.id} 
+			activeTasks={props.activeTasks}
 			task={task} 
 			onHandleTask={(taskID, taskName) => props.onHandleTask(taskID, taskName)} 
 			onHandleNext={handleNext} 

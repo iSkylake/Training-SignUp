@@ -93,10 +93,10 @@ class App extends Component {
 	}
 
 	showView = () => {
-		const {showInputForm, showTask, showSchedule, schedule, firstName, lastName, login} = this.state;
+		const {showInputForm, showTask, showSchedule, schedule, firstName, lastName, login, tasks} = this.state;
 		const info = {firstName, lastName, login};
 		if(showInputForm) return <InputForm info={info} onHandleInput={this.handleInput} onHandleView={this.handleView} />;
-		else if(showTask) return <Tasks onHandleBack={this.handleView} onHandleNext={this.handleView} onHandleTask={this.handleTask}/>;
+		else if(showTask) return <Tasks activeTasks={tasks} onHandleBack={this.handleView} onHandleNext={this.handleView} onHandleTask={this.handleTask}/>;
 		else if(showSchedule) return <Schedule schedules={schedule} onHandleBack={this.handleView} onHandleNext={this.handleView} onHandleSchedule={this.handleSchedule}/>
 	}
 

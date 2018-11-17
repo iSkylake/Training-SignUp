@@ -13,6 +13,13 @@ class Task extends Component{
 		this.props.onHandleTask(taskID, taskName);
 	}
 
+	componentDidMount(){
+		const {activeTasks, task} = this.props;
+		if(activeTasks[task.name]){
+			this.setState({select: true});
+		}
+	}
+
 	render(){
 		const {task} = this.props;
 
