@@ -14,8 +14,8 @@ library.add(fas);
 
 class App extends Component {
 	state = {
-		showInputForm: false,
-		showTask: true,
+		showInputForm: true,
+		showTask: false,
 		showSchedule: false,
 		showConfirmation: false,
 		login: '',
@@ -69,7 +69,7 @@ class App extends Component {
 	}
 
 	handleInput = (eTargetName, eTargetValue) => {
-		this.setState({[eTargetName]: [eTargetValue]});
+		this.setState({[eTargetName]: eTargetValue});
 	}
 
 	handleTask = (taskID, taskName) => {

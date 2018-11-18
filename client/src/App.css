@@ -64,19 +64,50 @@
 	width: 90%;
 }
 
-.input-form input {
+.input-wrap {
+	width: 90%;
+	position: relative;
+}
+
+.input-label {
 	font-size: 2rem;
-	width: 85%;
+	color: #777;
+	position: absolute;
+	top: 10px;
+	left: 0%;
+	pointer-events: none;
+	transition: all 0.4s;
+}
+
+.input-field {
+	font-size: 2rem;
+	width: 100%;
 	border: none;
 	border-bottom: #ccc solid 2px;
 	outline: none;
-	padding: 10px 15px;
+	padding: 10px 0;
 	margin-bottom: 30px;
 	box-sizing: border-box;
+	transition: border 0.4s;
 }
 
-.input-form input:focus {
-	border-color: #000;
+.input-field-filled {
+	top: -10%;
+	left:	0;
+	font-size: 0.8rem;
+	font-weight: bold;	
+}
+
+.input-wrap input:focus + .input-label {
+	top: -10%;
+	left:	0;
+	font-size: 0.8rem;
+	color: #5468ff;
+	font-weight: bold;
+}
+
+.input-wrap input:focus {
+	border-bottom-color: #5468ff;
 }
 
 .input-form button {
