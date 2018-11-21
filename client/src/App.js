@@ -97,9 +97,9 @@ class App extends Component {
 			case 1: 
 				return <InputForm info={info} onHandleInput={this.handleInput} onHandleView={this.handleView} />;
 			case 2: 
-				return <Tasks activeTasks={tasks} onHandleBack={this.handleView} onHandleNext={this.handleView} onHandleTask={this.handleTask}/>;
+				return <Tasks activeTasks={tasks} onHandleView={this.handleView} onHandleTask={this.handleTask}/>;
 			case 3:
-				return <Schedule schedules={schedule} onHandleBack={this.handleView} onHandleNext={this.handleView} onHandleSchedule={this.handleSchedule}/>;
+				return <Schedule schedules={schedule} onHandleView={this.handleView} onHandleSchedule={this.handleSchedule}/>;
 			default:
 				return
 		}

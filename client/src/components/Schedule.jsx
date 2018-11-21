@@ -4,12 +4,8 @@ import {scheduleList, shiftList} from '../appData.js';
 
 const Schedule = props => {
 
-	const handleBack = () => {
-		props.onHandleBack(-1);
-	}
-
-	const handleNext = () => {
-		props.onHandleNext(+1);
+	const handleView = (view) => {
+		props.onHandleView(view);
 	}
 
 	const handleClick = (shiftName, scheduleDay) => {
@@ -42,8 +38,8 @@ const Schedule = props => {
 			{schedules}
 			</div>
 			<div className="task-button-wrapper">
-				<button className="button-back" onClick={handleBack}>Back</button>
-				<button className="button-next" onClick={handleNext}>Next</button>				
+				<button className="button-back" onClick={() => handleView(-1)}>Back</button>
+				<button className="button-next" onClick={() => handleView(1)}>Next</button>				
 			</div>
 		</div>
 	);

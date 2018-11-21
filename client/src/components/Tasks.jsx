@@ -5,12 +5,8 @@ import Task from './Task.jsx';
 
 const Tasks = props => {
 
-	const handleBack = () => {
-		props.onHandleBack(-1);
-	}
-
-	const handleNext = () => {
-		props.onHandleNext(+1);
+	const handleView = (view) => {
+		props.onHandleView(view);
 	}
 
 	const tasks = taskList.map((task) => 
@@ -18,8 +14,6 @@ const Tasks = props => {
 			activeTasks={props.activeTasks}
 			task={task} 
 			onHandleTask={(taskID, taskName) => props.onHandleTask(taskID, taskName)} 
-			onHandleNext={handleNext} 
-			onHandleBack={handleBack}
 		/>
 	);
 
@@ -30,8 +24,8 @@ const Tasks = props => {
 				{tasks}
 			</div>
 			<div className="task-button-wrapper">
-				<button className="button-back" onClick={handleBack}>Back</button>
-				<button className="button-next" onClick={handleNext}>Next</button>				
+				<button className="button-back" onClick={() => handleView(-1)}>Back</button>
+				<button className="button-next" onClick={() => handleView(1)}>Next</button>				
 			</div>
 		</div>
 	);
