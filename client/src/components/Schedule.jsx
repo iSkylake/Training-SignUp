@@ -5,11 +5,11 @@ import {scheduleList, shiftList} from '../appData.js';
 const Schedule = props => {
 
 	const handleBack = () => {
-		props.onHandleBack('showSchedule', 'showTask');
+		props.onHandleBack(-1);
 	}
 
 	const handleNext = () => {
-		props.onHandleNext('showSchedule', 'showConfirmation');
+		props.onHandleNext(+1);
 	}
 
 	const handleClick = (shiftName, scheduleDay) => {

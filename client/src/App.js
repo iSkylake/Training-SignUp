@@ -14,10 +14,7 @@ library.add(fas);
 
 class App extends Component {
 	state = {
-		showInputForm: true,
-		showTask: false,
-		showSchedule: false,
-		showConfirmation: false,
+		currentView: 1,
 		login: '',
 		firstName: '',
 		lastName: '',
@@ -85,19 +82,27 @@ class App extends Component {
 		this.setState({schedule});
 	}
 
-	handleView = (currentView, nextView) => {
+	handleView = (view) => {
+		let {currentView} = this.state;
+		currentView += view
 		this.setState({
-			[currentView]: false,
-			[nextView]: true
+			currentView
 		});
 	}
 
 	showView = () => {
-		const {showInputForm, showTask, showSchedule, schedule, firstName, lastName, login, tasks} = this.state;
+		const {currentView, schedule, firstName, lastName, login, tasks} = this.state;
 		const info = {firstName, lastName, login};
-		if(showInputForm) return <InputForm info={info} onHandleInput={this.handleInput} onHandleView={this.handleView} />;
-		else if(showTask) return <Tasks activeTasks={tasks} onHandleBack={this.handleView} onHandleNext={this.handleView} onHandleTask={this.handleTask}/>;
-		else if(showSchedule) return <Schedule schedules={schedule} onHandleBack={this.handleView} onHandleNext={this.handleView} onHandleSchedule={this.handleSchedule}/>
+		switch(currentView){
+			case 1: 
+				return <InputForm info={info} onHandleInput={this.handleInput} onHandleView={this.handleView} />;
+			case 2: 
+				return <Tasks activeTasks={tasks} onHandleBack={this.handleView} onHandleNext={this.handleView} onHandleTask={this.handleTask}/>;
+			case 3:
+				return <Schedule schedules={schedule} onHandleBack={this.handleView} onHandleNext={this.handleView} onHandleSchedule={this.handleSchedule}/>;
+			default:
+				return
+		}
 	}
 
 	render() {

@@ -8,9 +8,7 @@ const InputForm = props => {
 
 	const handleContinue = (e) => {
 		e.preventDefault();
-		const currentView = 'showInputForm';
-		const nextView = 'showTask';
-		props.onHandleView(currentView, nextView);
+		props.onHandleView(+1);
 	}
 
 	const inputFilled = (inputField) => {

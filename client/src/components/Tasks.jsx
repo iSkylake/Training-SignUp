@@ -6,11 +6,11 @@ import Task from './Task.jsx';
 const Tasks = props => {
 
 	const handleBack = () => {
-		props.onHandleBack('showTask', 'showInputForm');
+		props.onHandleBack(-1);
 	}
 
 	const handleNext = () => {
-		props.onHandleNext('showTask', 'showSchedule');
+		props.onHandleNext(+1);
 	}
 
 	const tasks = taskList.map((task) => 
